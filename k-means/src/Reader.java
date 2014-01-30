@@ -6,8 +6,13 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+/**
+ * Lire les données à partir du fichier
+ *	
+ * @author Olfa
+ *
+ */
 
-/**lire les données à partir du fichier*/
 public class Reader {
 	
 	 /** nom du fichier */
@@ -20,23 +25,12 @@ public class Reader {
     private final String separator = "\t";
    
     /**Matrice des données*/
-    
-//    /** index des attributs à utiliser */
-//    private int[] usedAttributes;
-    
+
     public Reader(String fileName,int Nligne) {
         this.fileName = fileName;
         this.Nligne=Nligne;
     }
 
-//    public void setAttributesUsed(int[] usedAttributes) {
-//        this.usedAttributes = usedAttributes;
-//    }
-
-    /**
-     * 
-     * @return
-     */
 
     public ArrayList <Record> readData(){
     	
