@@ -12,22 +12,31 @@ public class Reader {
 	
 	 /** nom du fichier */
     private String fileName;
-   
+    
+    /**ligne début de lecture dans le fichier*/
+    int Nligne;
+    
     /** separateur */
     private final String separator = "\t";
    
-    /** index des attributs à utiliser */
-    private int[] usedAttributes;
+    /**Matrice des données*/
     
-    public Reader(String fileName) {
+//    /** index des attributs à utiliser */
+//    private int[] usedAttributes;
+    
+    public Reader(String fileName,int Nligne) {
         this.fileName = fileName;
+        this.Nligne=Nligne;
     }
 
-    public void setAttributesUsed(int[] usedAttributes) {
-        this.usedAttributes = usedAttributes;
-    }
+//    public void setAttributesUsed(int[] usedAttributes) {
+//        this.usedAttributes = usedAttributes;
+//    }
 
-    
+    /**
+     * 
+     * @return
+     */
 
     public ArrayList <Record> readData(){
     	
@@ -37,14 +46,21 @@ public class Reader {
     		File file = new File(fileName);
     		FileReader FR=new FileReader(file);
     		BufferedReader BR = new BufferedReader(FR);   
-     	
+    		
     		try {	
-            	
-                String line = BR.readLine();
+    			String line=BR.readLine();
+            	int i=1;
+            	/**passer les lignes qui ne contiennet pas des données*/
+            	while (i<this.Nligne){
+            		line = BR.readLine();
+            		i++;
+            	}
+                  
                 while (line != null) {
-                   
-                	System.out.println(line);
+                	extractData(records,line);
+                	//System.out.println(line);
                     line = BR.readLine();
+                	
                 	}
                 BR.close();
                 FR.close();
@@ -60,5 +76,29 @@ public class Reader {
         
     return records;
     }
-	
+    
+	/**
+	 * 
+	 */
+    private void extractData(ArrayList<Record>records,String line){
+    
+    	/**extraires les différents champs d'une ligne*/
+    	String[] strRecord=line.split(separator);
+    	double[] record=new double[strRecord.length];
+    	for (int i=0;i<strRecord.length;i++){
+    		record[i]=Double.parseDouble(strRecord[i]);
+    	}
+    	
+    	try {
+	    	 	Record r;
+				r = new Record(record);
+				records.add(r);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    	   	
+    }
+    
+    
 }
