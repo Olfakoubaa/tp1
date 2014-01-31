@@ -52,7 +52,6 @@ public class Reader {
                   
                 while (line != null) {
                 	extractData(records,line);
-                	//System.out.println(line);
                     line = BR.readLine();
                 	
                 	}
