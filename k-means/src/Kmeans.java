@@ -73,7 +73,7 @@ public class Kmeans {
 	}
 	
 	/**Calcul de la distance */
-	 public double calculate(double [] x1, double [] x2) {
+	 public double calculateDistance(double [] x1, double [] x2) {
 	     
 		 /**si les deux elements ne sont pas de la meme taille*/  
 		 if (x1.length != x2.length) {
@@ -94,7 +94,35 @@ public class Kmeans {
 	        return Math.sqrt(val);
 	    }
 	
-	
+	 /**retourne l'indice de l'élement minimal d'un tableau*/
+	 public int searchMin(double [] T){
+		 
+		 int min=0;
+		 for (int i=0;i<T.length;i++){
+			 if (T[i]<T[min])
+				 min=i;
+		 }
+		 return min;
+	 }
+	 
+	 
+	/**classer les points dans les clusters*/
+	 public void iteration(){	 
+		 double[]distances=new double[k];
+		 for(int i=0;i<records.size();i++){
+			 for(int j=0;j<k;j++){
+				//calculer la distance par rapport à tt les centres
+				 distances[k]=calculateDistance(records.get(i).getData(),clusters[i].getCenter());
+				//prendre la distance minimale 
+				 int min=searchMin(distances);
+				 //déplacer l'élement dans la classe correspendante 
+				 if(min!=records.get(i).getCorrectClass()){
+					 records.get(i).setCorrectClass(min);
+				 }
+			 }
+		 }
+	 }
+	 
 	
 	public ArrayList<Record> getRecords() {
 		return records;
