@@ -54,7 +54,6 @@ public class Kmeans {
 	
 	/**initialisation des groupes*/
 	public void initClusters (){		
-		
 		int tabAléa[]=alea();	
 		/**initialiser les éléments et les classes*/
 
@@ -71,8 +70,29 @@ public class Kmeans {
 					System.out.print(T[j]+"\t");
 				System.out.println("\n");
 		}
-
 	}
+	
+	/**Calcul de la distance */
+	 public double calculate(double [] x1, double [] x2) {
+	     
+		 /**si les deux elements ne sont pas de la meme taille*/  
+		 if (x1.length != x2.length) {
+	            throw new IllegalArgumentException(
+	                    "Vectors should be of equal length: x1 length = "
+	                            + x1.length + " x2 length = " + x2.length);
+	        }
+		 
+		 /**formule : dist= racine(produit (xi-yi))*/
+	        double val = 0;
+	        double temp;
+	        for (int i = 0; i < x1.length; i++) {
+	            temp = x1[i] - x2[i];
+	            temp *= temp;
+	            val += temp;
+	        }
+
+	        return Math.sqrt(val);
+	    }
 	
 	
 	
