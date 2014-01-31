@@ -1,13 +1,15 @@
 
 public class Record {
 
-	
+
     /**  tableau des données d'une ligne  */
     private double []data;
     
     /** le groupe auquel appartient la ligne */
     private int correctClass;
- 
+
+    /**Le centre du record*/
+    
     Record(double[]data){
     	this.data=data;
     	this.correctClass=0;

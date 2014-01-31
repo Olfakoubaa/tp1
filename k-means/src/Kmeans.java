@@ -20,21 +20,22 @@ public class Kmeans {
 	private int k;
 	
 	/**liste des groupes*/
-	private ArrayList<Cluster>clusters;
+	private Cluster []  clusters;
 	
-	Kmeans(ArrayList records, int k){		
+	/**constructeur*/
+	Kmeans(ArrayList<Record>records, int k){		
 		this.k=k;
-		this.clusters=new ArrayList<Cluster>();
+		this.clusters=new Cluster[k];
 		this.records=records;
 	}
 
-	/**initialisation des groupes*/
-	private void initClusters (){		
+	/**méthode qui renvoi k ombres aléatoires */
+	
+	private int [] alea(){
 		/**choix de k nombres aléatoires distincts */
-		int tabAléa[]=new int[k];
+		int tabAléa[]=new int[this.k];
 		Random rd=new Random();	
-		
-		for(int i=0;i<k;i++){		
+		for(int i=0;i<this.k;i++){		
 			//nombre aléatoire
 			int r=rd.nextInt(10);
 			//chercher s'il exite 
@@ -48,10 +49,29 @@ public class Kmeans {
 				}	
 			tabAléa[i]=r;	
 		}
+		return tabAléa;
+	}
 	
-		//clusters.add()
-		/**ajouter les*/
+	/**initialisation des groupes*/
+	public void initClusters (){		
 		
+		int tabAléa[]=alea();	
+		/**initialiser les éléments et les classes*/
+
+		for(int i=0;i<k;i++){
+			//ajouter l'élement aléatoire  à la classe
+			records.get(tabAléa[i]).setCorrectClass(k);
+			//initialiser les classe : centre = l'élement , id = i 
+			clusters[i]=new Cluster(i,records.get(tabAléa[i]).getData());
+			
+			//affichage
+			System.out.print("Classe "+clusters[i].getId() +"\telement: "+ tabAléa[i]+"\t");
+				double [] T=clusters[i].getCenter();
+				for(int j=0;j<T.length;j++)
+					System.out.print(T[j]+"\t");
+				System.out.println("\n");
+		}
+
 	}
 	
 	
@@ -64,12 +84,14 @@ public class Kmeans {
 		this.records = records;
 	}
 
-	public ArrayList<Cluster> getClusters() {
+	public Cluster[] getClusters() {
 		return clusters;
 	}
 
-	public void setClusters(ArrayList<Cluster> clusters) {
+	public void setClusters(Cluster[] clusters) {
 		this.clusters = clusters;
 	}
+
+	
 	
 }
