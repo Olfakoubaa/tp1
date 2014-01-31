@@ -13,7 +13,9 @@ import java.util.Random;
  */
 public class Kmeans {
 	
-	/** Liste des Données*/
+	/** Liste des Données
+	 * chaque ligne du fichier est 
+	 * stocker en tant qu'un ckuster*/
 	private ArrayList <Record>records;
 	
 	/**nombre des groupes*/

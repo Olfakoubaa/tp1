@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-
-
 public class Cluster {
 	
 	/**le centre du groupe*/
@@ -9,11 +6,14 @@ public class Cluster {
 	/**identifiant*/
 	private int id;
 	
+	/**Le constructeur initialisation 
+	 * le centre de la classe 
+	 * l'identifiant de chaque classe*/
 	Cluster(int id,double [] center){
 		this.center=center;
 		this.id=id;
 	}
-	
+	/**les gtter and setter */
 	public double [] getCenter() {
 		return center;
 	}
