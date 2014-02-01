@@ -3,7 +3,11 @@ import java.awt.Graphics;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Random;
-
+/***
+ * c'est la classe qui   
+ * 
+ *
+ */
 public class Cluster implements ObjetDessinable{
 	
 	/**le centre du groupe*/
@@ -17,9 +21,7 @@ public class Cluster implements ObjetDessinable{
 	*/
 	private LinkedList<float[]> points;
 	
-	/**
-	* Liste des points du cluster
-	*/
+	
 	private Kmeans kmean;
 	
 	/**Le constructeur initialisation 

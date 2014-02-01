@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 
 public class Record {
 
@@ -31,4 +33,7 @@ public class Record {
 		this.data = data;
 	}
     
+
+
+
 }

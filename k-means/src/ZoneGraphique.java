@@ -1,10 +1,6 @@
-
-
-
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.LinkedList;
-
 import javax.swing.JFrame;
 
 /**
@@ -13,7 +9,7 @@ import javax.swing.JFrame;
  * les objets de type ObjetDessinable ajoutes à la liste sont redessines par 
  * un appel a leur methode dessinerObjet(Graphics g)
  * 
- * @see ObjectDessinable,LoftPanel
+ * 
  */
 
 public class ZoneGraphique extends JFrame {
@@ -62,15 +58,15 @@ public class ZoneGraphique extends JFrame {
 	
 	/**
 	 * largeur de la partie dessinable
-	 */
+	 *//*
 	public int getWidth() {
 		return getContentPane().getWidth();
 	}
 	
-	/**
+	*//**
 	 * hauteur de la partie dessinable
-	 */
+	 *//*
 	public int getHeight() {
 		return getContentPane().getHeight();
-	}
+	}*/
 }
