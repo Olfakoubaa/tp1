@@ -17,6 +17,7 @@ public class main {
 //				System.out.println(tab[j]);
 //			System.out.println("\n");
 //		}
+		k.afficher();
 
 	}
 

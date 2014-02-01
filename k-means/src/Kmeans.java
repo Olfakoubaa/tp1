@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Random;
 
+import java.util.Iterator;
 /**
  * Implémentation de la méthode de clustering
  * 0-Initialiser le nombre de clusters
@@ -142,6 +143,14 @@ public class Kmeans {
 		this.clusters = clusters;
 	}
 
-	
+	public void afficher(){
+		ZoneGraphique zone = new ZoneGraphique("K means");
+		//Iterator<Cluster> iter = this.clusters.iterator();
+		
+		for (int i=0;i<clusters.length;i++)
+		{
+			zone.ajouterObjet((ObjetDessinable) clusters[i]);
+					}
+	}
 	
 }
