@@ -214,6 +214,7 @@ public class Kmeans {
 			 iteration();
 			 this.affiche();
 		 }
+		 this.afficher();
 //		 System.out.println(stop);
 	 }
 
@@ -253,8 +254,11 @@ public void affiche(){
 	}
 	public void afficher(){
 		ZoneGraphique zone = new ZoneGraphique("K means");
+	
+		
 		for(int i=0;i<clusters.length;i++){
 			zone.ajouterObjet(clusters[i]);
+			
 		}
 	}
 

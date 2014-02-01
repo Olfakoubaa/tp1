@@ -55,18 +55,4 @@ public class ZoneGraphique extends JFrame {
 	void enleverObjet(ObjetDessinable o) {
 		liste.remove(o);
 	}
-	
-	/**
-	 * largeur de la partie dessinable
-	 *//*
-	public int getWidth() {
-		return getContentPane().getWidth();
-	}
-	
-	*//**
-	 * hauteur de la partie dessinable
-	 *//*
-	public int getHeight() {
-		return getContentPane().getHeight();
-	}*/
 }

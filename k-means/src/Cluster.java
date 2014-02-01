@@ -4,36 +4,35 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Random;
 /***
- * c'est la classe qui   
+ *    
  * 
  *
  */
 public class Cluster implements ObjetDessinable{
-	
+
 	/**le centre du groupe*/
 	private double[] center;
-	
+
 	/**identifiant*/
 	private int id;
-	
-	/**
-	* Liste des points du cluster
-	*/
+
 	private LinkedList<float[]> points;
-	
-	
+
+
 	private Kmeans kmean;
-	
+
 	/**Le constructeur initialisation 
 	 * le centre de la classe 
 	 * l'identifiant de chaque classe*/
+
 	Cluster(int id,double [] center){
 		this.center=center;
 		this.id=id;
 		 points = new LinkedList<float[]>();
 	        this.kmean = kmean;
 	}
-	/**les gtter and setter */
+	
+	
 	public double [] getCenter() {
 		return center;
 	}
@@ -46,7 +45,7 @@ public class Cluster implements ObjetDessinable{
 		return id;
 	}
 	public void setPoints(LinkedList<float[]> points) {
-		this.points = points;
+		kmean.getElements(this);
 	}
 	public void setId(int id) {
 		this.id = id;
@@ -69,5 +68,5 @@ public class Cluster implements ObjetDessinable{
 			g.fillRect((int)this.center[0]*5,(int)this.center[1]*5,5,5);
 		}
 	}
-	
+
 }

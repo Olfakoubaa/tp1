@@ -10,14 +10,7 @@ public class main {
 
 		Kmeans k= new Kmeans (records,5);
 		k.clustering();
-		k.afficher();
-
-//		for(int i=0;i<records.size();i++){
-//			double tab[]= records.get(i).getData();
-//			for(int j=0;j<tab.length;j++)
-//				System.out.println(tab[j]);
-//			System.out.println("\n");
-//		}
+		//k.afficher();
 
 	}
 
