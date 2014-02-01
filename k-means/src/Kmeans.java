@@ -149,8 +149,7 @@ public class Kmeans {
 		
 		for (int i=0;i<clusters.length;i++)
 		{
-			zone.ajouterObjet((ObjetDessinable) clusters[i]);
-					}
+			zone.ajouterObjet(clusters[i]);					}
 	}
 	
 }

@@ -3,7 +3,8 @@ import java.awt.Graphics;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Random;
-public class Cluster {
+
+public class Cluster implements ObjetDessinable{
 	
 	/**le centre du groupe*/
 	private double[] center;

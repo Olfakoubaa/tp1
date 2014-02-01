@@ -5,11 +5,11 @@ public class main {
 
 	public static void main(String[] args) {
 		//Reader r=new Reader("ListeDesMoyennes.txt",2);
-		Reader r=new Reader("exemple2.txt",1);
+		Reader r=new Reader("exemple1.txt",1);
 
 		ArrayList <Record>records=r.readData();
 		
-		Kmeans k= new Kmeans (records,3);
+		Kmeans k= new Kmeans (records,10);
 		k.initClusters();
 //		for(int i=0;i<records.size();i++){
 //			double tab[]= records.get(i).getData();
